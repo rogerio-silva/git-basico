@@ -26,6 +26,11 @@
   git config --global user.name "Seu Nome"
   git config --global user.email "seu.email@exemplo.com"
   ```
+  
+- Configuração de chave SSH:
+  - Para configurar uma chave SSH, siga as instruções do GitHub: [Generating a new SSH key and adding it to the SSH agent](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  - Após configurar a chave SSH, adicione-a à sua conta do GitHub: [Adding a new SSH key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+
 - Testando a configuração:
   ```bash
   git config --list
@@ -179,7 +184,7 @@ O comando git log --oneline exibe um histórico simplificado, mostrando o hash a
   - Repositórios remotos permitem que o código seja compartilhado entre desenvolvedores via serviços como GitHub, GitLab, ou Bitbucket. Eles são utilizados para colaborar em equipe, mantendo uma cópia centralizada do projeto.
   - Para adicionar um repositório remoto ao seu repositório local:
     ```bash
-    git remote add origin https://github.com/seu-usuario/seu-repositorio.git
+    git remote add origin git@github.com/seu-usuario/seu-repositorio.git
     ```
   - Para verificar os repositórios remotos configurados:
     ```bash
@@ -211,7 +216,7 @@ O comando git log --oneline exibe um histórico simplificado, mostrando o hash a
 #### Exemplo Prático: Clonar um repositório remoto, fazer alterações, realizar push, e resolver conflitos durante um merge
 - Clonar um repositório remoto e fazer alterações:
   ```bash
-  git clone https://github.com/seu-usuario/seu-repositorio.git
+  git clone url_do_repositorio
   cd seu-repositorio
   echo "Alteração feita no clone" > alteracao.txt
   git add alteracao.txt
@@ -222,7 +227,7 @@ O comando git log --oneline exibe um histórico simplificado, mostrando o hash a
 Resolver um conflito durante um merge:
 Suponha que um conflito ocorreu durante o merge. O Git identificará o conflito e marcará o arquivo conflitante.
 Edite o arquivo para resolver o conflito, escolhendo as mudanças que devem ser mantidas.
-Após resolver o conflito, adicione o arquivo à Staging Area e finalize o merge com um novo commit:
+Após resolver o conflito, adicione o arquivo à _Staging Area_ e finalize o merge com um novo commit:
 ```bash
 git add arquivo_com_conflito.txt
 git commit -m "Resolvido o conflito"
